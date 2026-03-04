@@ -1,7 +1,5 @@
-neo4j
+streamlit
 python-dotenv
-sentence-transformers
-requests
-flask
 pymupdf
-gunicorn
+neo4j
+requests
