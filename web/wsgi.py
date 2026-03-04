@@ -1,8 +1,9 @@
 import os
-from app import app
+from web.app import app
 
-port = int(os.environ.get("PORT", 10000))
+# Render provides PORT env variable
+port = os.getenv("PORT", "10000")
+app.config["SERVER_NAME"] = f"0.0.0.0:{port}"
 
-if __name__ != "__main__":
-    # Tell Gunicorn to bind correctly
-    app.config["SERVER_NAME"] = f"0.0.0.0:{port}"
+# Gunicorn looks for this
+application = app
