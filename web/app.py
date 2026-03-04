@@ -7,6 +7,7 @@ from rag.retriever import get_relevant_docs
 from rag.chat import ask_groq
 from werkzeug.utils import secure_filename
 import fitz 
+import os
 
 load_dotenv()
 
@@ -67,4 +68,5 @@ def chat():
     return jsonify({"answer": answer})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
