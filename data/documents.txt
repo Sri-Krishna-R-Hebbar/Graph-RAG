@@ -1,0 +1,3 @@
+GraphRAG is a system that uses graphs + LLMs.
+It stores nodes, relationships and vectors in Neo4j.
+Vector embeddings help retrieve relevant answers.
